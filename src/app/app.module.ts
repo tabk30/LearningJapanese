@@ -11,6 +11,8 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { AppSetting } from '../providers/config/app-setting/app-setting';
+import { AppUpdateProvider } from '../providers/app-update/app-update';
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -42,7 +44,9 @@ const cloudSettings: CloudSettings = {
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    AppSetting,
+    AppUpdateProvider
   ]
 })
 export class AppModule {}
