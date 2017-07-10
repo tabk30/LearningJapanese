@@ -15,4 +15,12 @@
   <ion-card-content>
     0.0.3
   </ion-card-content>
+
+  <ion-item>
+    <ion-label>Selec app env</ion-label>
+    <ion-select interface="action-sheet" (ionChange)="channelSelect($event)" [(ngModel)]="channel">
+      <ion-option *ngFor="let channel of allChannel" [value]="channel">{{channel}}</ion-option>
+    </ion-select>
+  </ion-item>
+
 </ion-content>
