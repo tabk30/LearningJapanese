@@ -13,6 +13,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AppSetting } from '../providers/config/app-setting/app-setting';
 import { AppUpdateProvider } from '../providers/app-update/app-update';
+import { FileHandlProvider } from '../providers/file-handl/file-handl';
+import { HttpProvider } from '../providers/http/http';
+import { UpdateComponent } from '../components/update/update';
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -26,7 +29,8 @@ const cloudSettings: CloudSettings = {
     ContactPage,
     AboutPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +50,9 @@ const cloudSettings: CloudSettings = {
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AppSetting,
-    AppUpdateProvider
+    AppUpdateProvider,
+    FileHandlProvider,
+    HttpProvider
   ]
 })
 export class AppModule {}

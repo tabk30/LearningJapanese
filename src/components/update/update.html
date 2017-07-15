@@ -1,0 +1,6 @@
+<ion-item>
+    <ion-label>Selec app env</ion-label>
+    <ion-select interface="action-sheet" (ionChange)="switchToChannel($event)" [(ngModel)]="channel">
+      <ion-option *ngFor="let channel of allChannel" [value]="channel">{{channel}}</ion-option>
+    </ion-select>
+  </ion-item>
