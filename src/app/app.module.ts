@@ -14,7 +14,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AppSetting } from '../providers/config/app-setting/app-setting';
 import { AppUpdateProvider } from '../providers/app-update/app-update';
-import { FileHandlProvider } from '../providers/file-handl/file-handl';
+import { FileDataHandleProvider } from '../providers/file-data-handle/file-data-handle';
 import { HttpProvider } from '../providers/http/http';
 import { UpdateComponent } from '../components/update/update';
 import { ExamApiProvider } from '../providers/api/exam-api/exam-api';
@@ -53,7 +53,7 @@ const cloudSettings: CloudSettings = {
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AppSetting,
     AppUpdateProvider,
-    FileHandlProvider,
+    FileDataHandleProvider,
     HttpProvider,
     ExamApiProvider
   ]
