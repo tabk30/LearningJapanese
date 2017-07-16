@@ -32,7 +32,7 @@ export class AppSetting {
   private allEvn:Object;
   private initConfig(){
     this.allEvn = this.getConfig('EVN');
-    this.currentEvn = this.allEvn['Production'];
+    this.currentEvn = this.allEvn['production'];
   }
 
   public switchToEvn(enviroment:string){
@@ -50,5 +50,10 @@ export class AppSetting {
 
   public getAllEvn():Object{
     return this.getConfig('EVN');
+  }
+
+  public getBaseURL(){
+    console.log("[AppSetting:getBaseURL]", this.currentEvn);
+    return this.currentEvn['baseURL'];
   }
 }

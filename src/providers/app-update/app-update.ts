@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Deploy } from "@ionic/cloud-angular";
 import { LoadingController, ToastController } from "ionic-angular";
 import { Platform } from 'ionic-angular';
-import { AlertController } from 'ionic-angular';
 
 /*
   Generated class for the AppUpdateProvider provider.
@@ -20,8 +19,7 @@ export class AppUpdateProvider {
   constructor(public deploy: Deploy,
     private readonly loadingCtrl: LoadingController,
     private readonly toastCtrl: ToastController,
-    private platform: Platform,
-    public alertCtrl: AlertController) {
+    private platform: Platform) {
     this.runUpdate(this.deploy.channel);
   }
 

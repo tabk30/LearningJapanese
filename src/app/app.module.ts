@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
+import { HttpModule } from '@angular/http';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -16,7 +17,7 @@ import { AppUpdateProvider } from '../providers/app-update/app-update';
 import { FileHandlProvider } from '../providers/file-handl/file-handl';
 import { HttpProvider } from '../providers/http/http';
 import { UpdateComponent } from '../components/update/update';
-
+import { ExamApiProvider } from '../providers/api/exam-api/exam-api';
 const cloudSettings: CloudSettings = {
   'core': {
     'app_id': '0581f9bf'
@@ -35,7 +36,8 @@ const cloudSettings: CloudSettings = {
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    CloudModule.forRoot(cloudSettings)
+    CloudModule.forRoot(cloudSettings),
+    HttpModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -52,7 +54,8 @@ const cloudSettings: CloudSettings = {
     AppSetting,
     AppUpdateProvider,
     FileHandlProvider,
-    HttpProvider
+    HttpProvider,
+    ExamApiProvider
   ]
 })
 export class AppModule {}
