@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ExamApiProvider } from '../../providers/api/exam-api/exam-api';
+import { FileDataHandleProvider } from '../../providers/file-data-handle/file-data-handle';
 
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
-  constructor(public navCtrl: NavController, private examApi: ExamApiProvider) {
+  constructor(public navCtrl: NavController, private examApi: ExamApiProvider, private fileHandle:FileDataHandleProvider) {
     this.examApi.getExamData({
       "data": [
         {

@@ -13,29 +13,72 @@ import { Observable } from 'rxjs/Observable';
 export class FileDataHandleProvider {
 
   constructor(private file: File) {
-    console.log('Hello FileHandlProvider Provider');
+    console.log('Hello FileDataHandleProvider Provider');
+    this.initDirAndFile();
   }
 
-  private initDirAndFile():void{
+  private initDirAndFile(): void {
+    this.initExamDir();
   }
 
-  public replateExamVersion(data:Object):Observable<Object>{
-    let response:Observable<Object> = new Observable<Object>();
+  private initExamDir(): void {
+    this.file.checkDir(this.file.dataDirectory, 'exam')
+      .then(_ => console.log(' [FileDataHandleProvider:initExamDir] Directory exists'))
+      .catch(err => {
+        console.log('[FileDataHandleProvider:initExamDir] Init exam dir and subdir');
+        this.file.createDir(this.file.dataDirectory, 'exam', false).then(success => {
+          console.log('[FileDataHandleProvider:initExamDir] Init exam dir success');
+          this.initAllExamFile();
+        }).catch(error => {
+          console.log('[FileDataHandleProvider:initExamDir] error', error);
+        });
+
+      });
+  }
+
+  private initAllExamFile() {
+    this.file.createFile(this.file.dataDirectory + '/exam', 'ExamVersion.json', true).then(data => {
+      console.log('[FileDataHandleProvider:initAllExamFile] /exam/ExamVersion.json sucess', data);
+    }).catch(error => {
+      console.log('[FileDataHandleProvider:initAllExamFile] /exam/ExamVersion.json error', error);
+    });
+
+    this.file.createDir(this.file.dataDirectory + '/exam', 'exam_data', false).then(success => {
+      console.log('[FileDataHandleProvider:initAllExamFile] Init exam dir success');
+    }).catch(error => {
+      console.log('[FileDataHandleProvider:initAllExamFile] error', error);
+    });
+
+    this.file.createDir(this.file.dataDirectory + '/exam', 'meida', false).then(success => {
+      console.log('[FileDataHandleProvider:initAllExamFile] Init exam dir success');
+    }).catch(error => {
+      console.log('[FileDataHandleProvider:initAllExamFile] error', error);
+    });
+
+    this.file.createDir(this.file.dataDirectory + '/exam', 'image', false).then(success => {
+      console.log('[FileDataHandleProvider:initAllExamFile] Init exam dir success');
+    }).catch(error => {
+      console.log('[FileDataHandleProvider:initAllExamFile] error', error);
+    });
+  }
+
+  public replateExamVersion(data: Object): Observable<Object> {
+    let response: Observable<Object> = new Observable<Object>();
     return response;
   }
 
-  public readExamVertion():Observable<Object>{
-    let response:Observable<Object> = new Observable<Object>();
+  public readExamVertion(): Observable<Object> {
+    let response: Observable<Object> = new Observable<Object>();
     return response;
   }
 
-  public wrireExamData(data:Object):Observable<Object>{
-    let response:Observable<Object> = new Observable<Object>();
+  public wrireExamData(data: Object): Observable<Object> {
+    let response: Observable<Object> = new Observable<Object>();
     return response;
   }
 
-  public getExamById(examId:string):Observable<Object>{
-    let response:Observable<Object> = new Observable<Object>();
+  public getExamById(examId: string): Observable<Object> {
+    let response: Observable<Object> = new Observable<Object>();
     return response;
   }
 }

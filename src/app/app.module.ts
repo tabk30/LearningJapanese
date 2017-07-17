@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { CloudSettings, CloudModule } from '@ionic/cloud-angular';
 import { HttpModule } from '@angular/http';
+import { File } from '@ionic-native/file';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -50,12 +51,13 @@ const cloudSettings: CloudSettings = {
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
     AppSetting,
     AppUpdateProvider,
+    File,
     FileDataHandleProvider,
     HttpProvider,
     ExamApiProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }
