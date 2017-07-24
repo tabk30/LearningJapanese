@@ -46,7 +46,8 @@ const cloudSettings: CloudSettings = {
     ContactPage,
     AboutPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    UpdateComponent
   ],
   providers: [
     StatusBar,

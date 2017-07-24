@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import {AppUpdateProvider} from '../../providers/app-update/app-update';
+import { AppUpdateProvider } from '../../providers/app-update/app-update';
 import { AppSetting } from '../../providers/config/app-setting/app-setting';
-import { AlertController } from 'ionic-angular';
+import { NavController, AlertController, Alert } from 'ionic-angular';
+
 /**
  * Generated class for the UpdateComponent component.
  *
@@ -14,49 +15,35 @@ import { AlertController } from 'ionic-angular';
 })
 export class UpdateComponent {
 
-  private channel:string;
-  private allChannel:Array<string>;
+  private channel: string;
+  private allChannel: Array<string>;
+  private selectOptions = {
+    title: 'Chọn channel',
+    subTitle: 'Sau khi đồng ý sẽ update code mơi nhất của chanel đó.',
+    mode: 'md'
+  };
 
-  constructor(private appUpdate: AppUpdateProvider, private appConfig:AppSetting,
-    public alertCtrl: AlertController) {
-    console.log('[HomePage:constructor]');
+  constructor(public navCtrl: NavController,
+    private appUpdate: AppUpdateProvider,
+    private appConfig: AppSetting,
+    private alertCtrl: AlertController) {
     this.allChannel = new Array<string>();
     this.channel = this.appUpdate.getChannel();
     this.appConfig.switchToEvn(this.channel);
     this.initAllChannel();
+    this.appUpdate.runUpdate(this.channel);
   }
 
-  private switchToChannel($event){
-    let confirm = this.alertCtrl.create({
-      title: 'Use this lightsaber?',
-      message: 'Do you agree to use this lightsaber to do good across the intergalactic galaxy?',
-      buttons: [
-        {
-          text: 'Disagree',
-          handler: () => {
-            console.log('Disagree clicked');
-            confirm.dismiss();
-          }
-        },
-        {
-          text: 'Agree',
-          handler: () => {
-            console.log('Agree clicked');
-          }
-        }
-      ]
-    });
-    confirm.present();
+  public switchToChannel($event) {
     this.appUpdate.runUpdate($event);
   }
 
-  private initAllChannel(){
+  private initAllChannel() {
     let allChannelObject = this.appConfig.getAllEvn();
-    for(let key in allChannelObject){
-      if(key){
+    for (let key in allChannelObject) {
+      if (key) {
         this.allChannel.push(key);
-      } 
+      }
     }
   }
-
 }

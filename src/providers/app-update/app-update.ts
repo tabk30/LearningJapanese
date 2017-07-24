@@ -19,8 +19,8 @@ export class AppUpdateProvider {
   constructor(public deploy: Deploy,
     private readonly loadingCtrl: LoadingController,
     private readonly toastCtrl: ToastController,
-    private platform: Platform) {
-    this.runUpdate(this.deploy.channel);
+    private platform: Platform,
+  ) {
   }
 
   checkForUpdate() {
