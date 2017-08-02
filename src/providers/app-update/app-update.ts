@@ -21,6 +21,7 @@ export class AppUpdateProvider {
     private readonly toastCtrl: ToastController,
     private platform: Platform,
   ) {
+    console.log("[AppUpdateProvider:constructor] this.deploy.channel", this.deploy.channel);
   }
 
   checkForUpdate() {
@@ -33,13 +34,6 @@ export class AppUpdateProvider {
       checking.dismiss();
       if (snapshotAvailable) {
         this.downloadAndInstall();
-      }
-      else {
-        const toast = this.toastCtrl.create({
-          message: 'No update available',
-          duration: 3000
-        });
-        toast.present();
       }
     });
   }
@@ -61,14 +55,14 @@ export class AppUpdateProvider {
     }
   }
 
-  public runUpdate(channel:string) {
+  public runUpdate(channel: string) {
     this.deploy.channel = channel;
     if (this.canRunUpdate()) {
       this.checkForUpdate();
     }
   }
 
-  public getChannel():string{
+  public getChannel(): string {
     return this.deploy.channel;
   }
 
