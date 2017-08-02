@@ -1,0 +1,7 @@
+<ion-item>
+  <ion-label>Chọn channel.</ion-label>
+  
+  <ion-select [selectOptions]="selectOptions" interface="alert" (ionChange)="switchToChannel($event);" [(ngModel)]="channel">
+    <ion-option *ngFor="let channel of allChannel" [value]="channel">{{channel}}</ion-option>
+  </ion-select>
+</ion-item>

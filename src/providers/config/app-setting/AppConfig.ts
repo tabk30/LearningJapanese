@@ -2,19 +2,19 @@ export let Config = {
     EVN: {
         production: {
             channel: "Production",
-            baseURL: ""
+            baseURL: "http://httpbin.org/"
         },
         staging: {
             channel: "Staging",
-            baseURL: ""
+            baseURL: "http://httpbin.org/"
         },
         dev: {
             channel: "Dev",
-            baseURL: ""
+            baseURL: "http://httpbin.org/"
         },
         test: {
             channel: "Test",
-            baseURL: ""
+            baseURL: "http://httpbin.org/"
         }
     }
 }

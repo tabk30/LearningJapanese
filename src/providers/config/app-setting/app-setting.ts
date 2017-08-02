@@ -14,6 +14,7 @@ export class AppSetting {
     console.log('[AppSetting:constructor] Provider');
     console.log('[AppSetting:constructor]', AppConfig.Config);
     this.CONFIG = AppConfig.Config;
+    this.initConfig();
   }
 
   public getConfig(key: string) {
@@ -22,5 +23,37 @@ export class AppSetting {
         return this.CONFIG[temp];
       }
     }
-  }s
+  }
+
+  /*
+    Enviroment manager
+  */
+  private currentEvn:Object;
+  private allEvn:Object;
+  private initConfig(){
+    this.allEvn = this.getConfig('EVN');
+    this.currentEvn = this.allEvn['production'];
+  }
+
+  public switchToEvn(enviroment:string){
+    for(let temp in this.allEvn){
+      let object = this.allEvn['temp'];
+      if(object && object['channel'] == enviroment){
+        this.currentEvn = object;
+      }
+    }
+  }
+
+  public getCurrentConfig():Object{
+    return this.currentEvn;
+  }
+
+  public getAllEvn():Object{
+    return this.getConfig('EVN');
+  }
+
+  public getBaseURL(){
+    console.log("[AppSetting:getBaseURL]", this.currentEvn);
+    return this.currentEvn['baseURL'];
+  }
 }

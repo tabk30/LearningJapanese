@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Deploy } from "@ionic/cloud-angular";
 import { LoadingController, ToastController } from "ionic-angular";
-import { AppSetting } from '../config/app-setting/app-setting';
 import { Platform } from 'ionic-angular';
-import { AlertController } from 'ionic-angular';
 
 /*
   Generated class for the AppUpdateProvider provider.
@@ -21,18 +19,9 @@ export class AppUpdateProvider {
   constructor(public deploy: Deploy,
     private readonly loadingCtrl: LoadingController,
     private readonly toastCtrl: ToastController,
-    private appConfig: AppSetting,
     private platform: Platform,
-    public alertCtrl: AlertController) {
-    this.initENV();
-    if (this.canRunUpdate()) {
-      this.switchChannel();
-      this.checkForUpdate();
-    }
-  }
-
-  private initENV() {
-    this.initEnvConfig();
+  ) {
+    console.log("[AppUpdateProvider:constructor] this.deploy.channel", this.deploy.channel);
   }
 
   checkForUpdate() {
@@ -45,13 +34,6 @@ export class AppUpdateProvider {
       checking.dismiss();
       if (snapshotAvailable) {
         this.downloadAndInstall();
-      }
-      else {
-        const toast = this.toastCtrl.create({
-          message: 'No update available',
-          duration: 3000
-        });
-        toast.present();
       }
     });
   }
@@ -73,58 +55,15 @@ export class AppUpdateProvider {
     }
   }
 
-  private initEnvConfig() {
-    this.allEvn = this.appConfig.getConfig('EVN');
-    this.currentEnv = this.deploy.channel;
-    this.currentEnvObject = this.allEvn[this.currentEnv];
-  }
-
-  public getAllEnv() {
-    return this.allEvn;
-  }
-
-  public switchToEnv(env: string) {
-    for (let key in this.allEvn) {
-      if (key == env) {
-        this.currentEnv = key;
-        this.currentEnvObject = this.allEvn[this.currentEnv];
-        this.runUpdate();
-      }
+  public runUpdate(channel: string) {
+    this.deploy.channel = channel;
+    if (this.canRunUpdate()) {
+      this.checkForUpdate();
     }
   }
 
-  public getCurrentConfig() {
-    return this.currentEnvObject;
-  }
-
-  public getCurrentEnv() {
-    return this.currentEnv;
-  }
-
-  private runUpdate() {
-    let confirm = this.alertCtrl.create({
-      title: 'Thay đổi môi trường',
-      message: 'Bạn có muốn chuyển sang môi trường: ' + this.currentEnv,
-      buttons: [
-        {
-          text: 'OK',
-          handler: () => {
-            if (this.canRunUpdate()) {
-              this.switchChannel();
-              this.checkForUpdate();
-            }
-          }
-        },
-        {
-          text: 'Cancel'
-        }
-      ]
-    });
-    confirm.present();
-  }
-
-  private switchChannel(){
-    this.deploy.channel = this.currentEnvObject['channel'];
+  public getChannel(): string {
+    return this.deploy.channel;
   }
 
 }
