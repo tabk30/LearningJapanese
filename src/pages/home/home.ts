@@ -66,4 +66,8 @@ export class HomePage {
   private printConsoleLog(data:Object){
     console.log("HomePage:printConsoleLog ", data);
   }
+
+  public startExam(){
+    
+  }
 }

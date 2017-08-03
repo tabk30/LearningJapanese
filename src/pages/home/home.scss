@@ -1,3 +1,18 @@
 page-home {
-
+    $control-height: 40px;
+    .home-content{
+        text-align: center;
+        background: color($colors, primary);
+    }
+    h2{
+        color: color($colors, danger);
+        margin-top: 20.8rem;
+        font-size: 8.4rem;
+    }
+    update {
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+    }
 }
