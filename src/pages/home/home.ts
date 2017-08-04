@@ -67,7 +67,7 @@ export class HomePage {
     console.log("HomePage:printConsoleLog ", data);
   }
 
-  public startExam(){
-    
+  public startExam():void{
+
   }
 }
