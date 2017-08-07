@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { ExamApiProvider } from '../../providers/api/exam-api/exam-api';
 import { FileDataHandleProvider } from '../../providers/file-data-handle/file-data-handle';
+import { ExamPage } from '../exam/exam';
 
 @Component({
   selector: 'page-home',
@@ -68,6 +69,9 @@ export class HomePage {
   }
 
   public startExam():void{
-
+    this.navCtrl.push(ExamPage, {
+      id: "exam_page",
+      name: "ExamPage"
+    });
   }
 }
