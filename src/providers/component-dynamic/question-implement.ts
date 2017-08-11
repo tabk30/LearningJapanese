@@ -5,10 +5,11 @@ import { QuestionInterface }  from './QuestionInterface'
 @Component({
     selector: 'question-implement',
     template: `
-              <div>
+              <div class="question-implement" >
                 <ng-template question-host ></ng-template>
               </div>
-            `
+            `,
+    styles: ['.question-implement { height: 100%; }']
 })
 export class QuestionImplementComponent implements AfterViewInit, OnDestroy {
     @Input() component: Type<any>;

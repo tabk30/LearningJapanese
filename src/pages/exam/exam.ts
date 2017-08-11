@@ -16,7 +16,7 @@ import { VocaExamComponent } from '../../components/voca-exam/voca-exam';
 export class ExamPage {
   public component1:Type<any> = VocaStartComponent;
   public component1Data:Object = "test component 1";
-  public component2:Type<any> = VocaStartComponent;
+  public component2:Type<any> = VocaExamComponent;
   public component2Data:Object = "test component 2";
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

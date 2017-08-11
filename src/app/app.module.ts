@@ -25,6 +25,7 @@ import { VocaStartComponent } from '../components/voca-start/voca-start';
 import { VocaExamComponent } from '../components/voca-exam/voca-exam';
 import {QuestionImplementComponent} from '../providers/component-dynamic/question-implement';
 import {QuestionDirective} from '../providers/component-dynamic/question-host';
+import { VocaQ1Component } from '../components/voca-q1/voca-q1';
 
 
 const cloudSettings: CloudSettings = {
@@ -44,7 +45,8 @@ const cloudSettings: CloudSettings = {
     QuestionImplementComponent,
     VocaStartComponent,
     VocaExamComponent,
-    QuestionDirective
+    QuestionDirective,
+    VocaQ1Component
   ],
   imports: [
     BrowserModule,
