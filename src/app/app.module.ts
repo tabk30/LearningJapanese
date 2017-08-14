@@ -8,9 +8,8 @@ import { File } from '@ionic-native/file';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { AboutPage } from '../pages/about/about';
-import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
-import { TabsPage } from '../pages/tabs/tabs';
+import { ExamPage } from '../pages/exam/exam';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -20,6 +19,14 @@ import { FileDataHandleProvider } from '../providers/file-data-handle/file-data-
 import { HttpProvider } from '../providers/http/http';
 import { UpdateComponent } from '../components/update/update';
 import { ExamApiProvider } from '../providers/api/exam-api/exam-api';
+import { ExamProvider } from '../providers/exam/exam';
+import { TimeCountComponent } from '../components/time-count/time-count';
+import { VocaStartComponent } from '../components/voca-start/voca-start';
+import {QuestionImplementComponent} from '../providers/component-dynamic/question-implement';
+import {QuestionDirective} from '../providers/component-dynamic/question-host';
+import { VocaQ1Component } from '../components/voca-q1/voca-q1';
+import { VocaQ1ContainerComponent } from '../components/voca-q1-container/voca-q1-container';
+
 const cloudSettings: CloudSettings = {
   'core': {
     'app_id': '0581f9bf'
@@ -29,11 +36,16 @@ const cloudSettings: CloudSettings = {
 @NgModule({
   declarations: [
     MyApp,
-    ContactPage,
     AboutPage,
     HomePage,
-    TabsPage,
-    UpdateComponent
+    ExamPage,
+    UpdateComponent,
+    TimeCountComponent,
+    QuestionImplementComponent,
+    VocaStartComponent,
+    QuestionDirective,
+    VocaQ1Component,
+    VocaQ1ContainerComponent
   ],
   imports: [
     BrowserModule,
@@ -48,11 +60,14 @@ const cloudSettings: CloudSettings = {
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    ContactPage,
     AboutPage,
     HomePage,
-    TabsPage,
-    UpdateComponent
+    ExamPage,
+    UpdateComponent,
+    QuestionImplementComponent,
+    VocaStartComponent,
+    VocaQ1Component,
+    VocaQ1ContainerComponent
   ],
   providers: [
     StatusBar,
@@ -63,7 +78,8 @@ const cloudSettings: CloudSettings = {
     File,
     FileDataHandleProvider,
     HttpProvider,
-    ExamApiProvider
+    ExamApiProvider,
+    ExamProvider
   ]
 })
 export class AppModule { }
