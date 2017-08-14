@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
-import { VocaExamComponent } from './voca-exam';
+import { VocaQ1ContainerComponent } from './voca-q1-container';
 
 @NgModule({
   declarations: [
-    VocaExamComponent,
+    VocaQ1ContainerComponent,
   ],
   imports: [
     IonicModule,
   ],
   exports: [
-    VocaExamComponent
+    VocaQ1ContainerComponent
   ]
 })
-export class VocaExamComponentModule {}
+export class VocaQ1ContainerComponentModule {}

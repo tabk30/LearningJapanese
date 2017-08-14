@@ -17,4 +17,8 @@ export class VocaStartComponent implements QuestionInterface{
     console.log('Hello VocaStartComponent Component');
   }
 
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad VocaStartComponent');
+  }
+
 }

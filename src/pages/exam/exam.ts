@@ -1,7 +1,7 @@
 import { Component, Type } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { VocaStartComponent } from '../../components/voca-start/voca-start';
-import { VocaExamComponent } from '../../components/voca-exam/voca-exam';
+import { VocaQ1ContainerComponent } from '../../components/voca-q1-container/voca-q1-container';
 /**
  * Generated class for the ExamPage page.
  *
@@ -16,7 +16,7 @@ import { VocaExamComponent } from '../../components/voca-exam/voca-exam';
 export class ExamPage {
   public component1:Type<any> = VocaStartComponent;
   public component1Data:Object = "test component 1";
-  public component2:Type<any> = VocaExamComponent;
+  public component2:Type<any> = VocaQ1ContainerComponent;
   public component2Data:Object = "test component 2";
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {

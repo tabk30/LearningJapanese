@@ -22,11 +22,10 @@ import { ExamApiProvider } from '../providers/api/exam-api/exam-api';
 import { ExamProvider } from '../providers/exam/exam';
 import { TimeCountComponent } from '../components/time-count/time-count';
 import { VocaStartComponent } from '../components/voca-start/voca-start';
-import { VocaExamComponent } from '../components/voca-exam/voca-exam';
 import {QuestionImplementComponent} from '../providers/component-dynamic/question-implement';
 import {QuestionDirective} from '../providers/component-dynamic/question-host';
 import { VocaQ1Component } from '../components/voca-q1/voca-q1';
-
+import { VocaQ1ContainerComponent } from '../components/voca-q1-container/voca-q1-container';
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -44,9 +43,9 @@ const cloudSettings: CloudSettings = {
     TimeCountComponent,
     QuestionImplementComponent,
     VocaStartComponent,
-    VocaExamComponent,
     QuestionDirective,
-    VocaQ1Component
+    VocaQ1Component,
+    VocaQ1ContainerComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +66,8 @@ const cloudSettings: CloudSettings = {
     UpdateComponent,
     QuestionImplementComponent,
     VocaStartComponent,
-    VocaExamComponent
+    VocaQ1Component,
+    VocaQ1ContainerComponent
   ],
   providers: [
     StatusBar,

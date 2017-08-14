@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { QuestionInterface } from '../../providers/component-dynamic/QuestionInterface';
 
 /**
  * Generated class for the VocaQ1Component component.
@@ -10,7 +11,8 @@ import { Component } from '@angular/core';
   selector: 'voca-q1',
   templateUrl: 'voca-q1.html'
 })
-export class VocaQ1Component {
+export class VocaQ1Component implements QuestionInterface {
+  @Input() data: Object;
 
   text: string;
 
