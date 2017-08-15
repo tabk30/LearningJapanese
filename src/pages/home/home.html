@@ -1,5 +1,14 @@
 <ion-content class="home-content">
-  <h2>JLPT N3</h2>
-  <button ion-button color="secondary" round (click)="startExam();" >Start</button>
-  <update> </update>
+  <div class="exam-text">
+    <div class="inline exam-title-left">
+      <div class="jlpt">JLPT</div>
+      <div class="n">N</div>
+    </div>
+    <div class="inline exam-title-right">
+      <span >3</span>
+    </div>
+  </div>
+  <button class="button-start" (click)="startExam();">START</button>
+  <img src="../assets/img/settings-icon-20742.png" class="button-setting">
+  <update-auto> </update-auto>
 </ion-content>

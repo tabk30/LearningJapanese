@@ -26,6 +26,7 @@ import {QuestionImplementComponent} from '../providers/component-dynamic/questio
 import {QuestionDirective} from '../providers/component-dynamic/question-host';
 import { VocaQ1Component } from '../components/voca-q1/voca-q1';
 import { VocaQ1ContainerComponent } from '../components/voca-q1-container/voca-q1-container';
+import { UpdateAutoComponent } from '../components/update-auto/update-auto';
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -45,7 +46,8 @@ const cloudSettings: CloudSettings = {
     VocaStartComponent,
     QuestionDirective,
     VocaQ1Component,
-    VocaQ1ContainerComponent
+    VocaQ1ContainerComponent,
+    UpdateAutoComponent
   ],
   imports: [
     BrowserModule,
