@@ -2,8 +2,30 @@ page-home {
     $control-height: 40px;
     .home-content{
         text-align: center;
-        background: color($colors, primary);
+        background-image: url("../assets/img/start-exam-backgroung.png");
+        background-size: cover;
     }
+
+    .button-start {
+        position: relative;
+        margin-top: 45%;
+        width: 63%;
+        height: 9%;
+        border: 1px solid #0e5847;
+        border-radius: 55px;
+        background-color: #0c7a6e;
+        font-size: 18pt;
+        font-family: "PingFang TC Semibold";
+        font-weight: bolder;
+        color: #fff;
+        box-shadow: inset 5px -7px #0b736a;
+    }
+
+    button:active { 
+        background-color: #0C766B;
+        box-shadow: inset 5px -7px #0A6960;
+    }
+
     h2{
         color: color($colors, danger);
         margin-top: 20.8rem;
