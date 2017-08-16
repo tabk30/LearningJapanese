@@ -23,4 +23,8 @@ export class UpdateAutoComponent extends UpdateComponent {
     super(appUpdateExtend, appConfigExtend, alertCtrlExtend, storageExtend);
   }
 
+  protected initChannel(){
+    super.updateProcess('production');
+  }
+
 }
