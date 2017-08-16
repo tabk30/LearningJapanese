@@ -32,19 +32,20 @@ export class UpdateComponent {
     this.initAllChannel();
   }
 
-  private initChannel() {
+  protected initChannel() {
     this.storage.get('app_update_channel').then((value) => {
       console.log("[UpdateComponent:initChannel] value", value);
-      if (value) {
-        this.channel = value;
-        this.appConfig.switchToEvn(this.channel);
-        this.appUpdate.runUpdate(this.channel);
-      } else {
-        this.channel = 'production';
-        this.appConfig.switchToEvn(this.channel);
-        this.appUpdate.runUpdate(this.channel);
+      if (!value) {
+        value = 'production';
       }
+      this.updateProcess(value);
     });
+  }
+
+  protected updateProcess(channel:string):void{
+    this.channel = channel;
+    this.appConfig.switchToEvn(channel);
+    this.appUpdate.runUpdate(channel);
   }
 
   public switchToChannel($event) {

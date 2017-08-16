@@ -19,8 +19,7 @@ page-home {
         color: #c3f2ef;
         text-align: right;
         font-size: 5em;
-        margin-bottom: -41px;
-        
+        margin-bottom: -15%;
     }
     div.n{
         text-align: right;
@@ -30,14 +29,11 @@ page-home {
     div.exam-title-right { 
         float:left;
         width: 50%; 
-        position: relative;
         text-align: left;
     }
-    span{
+    .n-number{
         color: #fff;
         font-size: 12em;
-        position: absolute;
-        top: -33px;
     }
 
     .button-start {
