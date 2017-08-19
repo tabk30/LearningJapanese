@@ -1,15 +1,26 @@
 voca-start {
     .main{
-        background: #6C8FC3;
+        background: #fff;
         height: 100%;
-        display: -webkit-flex;
-        display: flex;
     }
-    p{
-        margin-top: 0px;
+    .n-title{
+        margin-top: 43%;
+        margin-bottom: 0%;
+        font-size: 4.5em;
+        font-weight: bold;
+        font-family: arial;
     }
-    .content{
-        margin:auto;
-        font-size: 1.8em;
+    .part-title{
+        font-size: 2em;
+        margin: 4% 0px;
+    }
+    .part-title span{
+        font-size: 0.5em;
+    }
+    .minute{
+        font-size: 2em;
+    }
+    .minute span{
+        font-weight: bold;
     }
 }
