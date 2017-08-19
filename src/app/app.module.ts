@@ -27,6 +27,7 @@ import {QuestionDirective} from '../providers/component-dynamic/question-host';
 import { VocaQ1Component } from '../components/voca-q1/voca-q1';
 import { VocaQ1ContainerComponent } from '../components/voca-q1-container/voca-q1-container';
 import { UpdateAutoComponent } from '../components/update-auto/update-auto';
+import { TimeCounterComponent } from '../components/time-counter/time-counter';
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -47,7 +48,8 @@ const cloudSettings: CloudSettings = {
     QuestionDirective,
     VocaQ1Component,
     VocaQ1ContainerComponent,
-    UpdateAutoComponent
+    UpdateAutoComponent,
+    TimeCounterComponent
   ],
   imports: [
     BrowserModule,
@@ -69,7 +71,8 @@ const cloudSettings: CloudSettings = {
     QuestionImplementComponent,
     VocaStartComponent,
     VocaQ1Component,
-    VocaQ1ContainerComponent
+    VocaQ1ContainerComponent,
+    TimeCounterComponent
   ],
   providers: [
     StatusBar,

@@ -1,0 +1,26 @@
+time-counter {
+    .container{
+        text-align: center;
+        background-color: #f7f3e8;
+        border-bottom: 5px solid #249991;
+        padding: 15px 0px 5px 0px;
+    }
+    img{
+        width: auto;
+        height: 30px;
+    }
+    .img-timer{
+        display: inline-block;
+    }
+    .time-counter{
+        display: inline-block;
+        position: absolute;
+        top: 17px;
+        padding-left: 5px;
+    }
+    span{
+        color: #1e8079;
+        font-weight: bold;
+        font: bold 17px Arial, Helvetica, sans-serif;
+    }
+}
