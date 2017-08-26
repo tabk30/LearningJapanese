@@ -1,0 +1,11 @@
+<!-- Generated template for the SubQuestionTextComponent component -->
+<div class="container">
+    <div class="sub-question">
+      <div class="question-content" [innerHTML]="content.content"> </div>
+        <ion-list class="ion-list-sub-question">
+          <ion-item class="ion-item-sub-question" *ngFor="let temp of content.answer; let i = index;">
+            <span>{{i + 1}} </span>{{temp}} 
+          </ion-item>
+        </ion-list>
+      </div>
+</div>

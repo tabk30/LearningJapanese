@@ -22,12 +22,14 @@ import { ExamApiProvider } from '../providers/api/exam-api/exam-api';
 import { ExamProvider } from '../providers/exam/exam';
 import { TimeCountComponent } from '../components/time-count/time-count';
 import { VocaStartComponent } from '../components/voca-start/voca-start';
-import {QuestionImplementComponent} from '../providers/component-dynamic/question-implement';
-import {QuestionDirective} from '../providers/component-dynamic/question-host';
+import { QuestionImplementComponent } from '../providers/component-dynamic/question-implement';
+import { QuestionDirective } from '../providers/component-dynamic/question-host';
 import { VocaQ1Component } from '../components/voca-q1/voca-q1';
 import { VocaQ1ContainerComponent } from '../components/voca-q1-container/voca-q1-container';
 import { UpdateAutoComponent } from '../components/update-auto/update-auto';
 import { TimeCounterComponent } from '../components/time-counter/time-counter';
+import { QuestionBaseComponent } from '../components/question-base/question-base';
+import { SubQuestionTextComponent } from '../components/sub-question-text/sub-question-text';
 
 const cloudSettings: CloudSettings = {
   'core': {
@@ -49,7 +51,9 @@ const cloudSettings: CloudSettings = {
     VocaQ1Component,
     VocaQ1ContainerComponent,
     UpdateAutoComponent,
-    TimeCounterComponent
+    TimeCounterComponent,
+    QuestionBaseComponent,
+    SubQuestionTextComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +62,7 @@ const cloudSettings: CloudSettings = {
     HttpModule,
     IonicStorageModule.forRoot({
       name: '__mydb',
-         driverOrder: ['indexeddb', 'sqlite', 'websql']
+      driverOrder: ['indexeddb', 'sqlite', 'websql']
     })
   ],
   bootstrap: [IonicApp],
@@ -67,12 +71,13 @@ const cloudSettings: CloudSettings = {
     AboutPage,
     HomePage,
     ExamPage,
-    UpdateComponent,
+    // UpdateComponent,
     QuestionImplementComponent,
     VocaStartComponent,
-    VocaQ1Component,
-    VocaQ1ContainerComponent,
-    TimeCounterComponent
+    // VocaQ1Component,
+    // VocaQ1ContainerComponent,
+    // TimeCounterComponent,
+    QuestionBaseComponent
   ],
   providers: [
     StatusBar,

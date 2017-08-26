@@ -1,0 +1,7 @@
+<!-- Generated template for the QuestionBaseComponent component -->
+<ion-content class="containter">
+    <ion-scroll scrollY="true" style="width: 100%; height: 100%;">
+    <p class="title"> {{questionTitle}} </p>
+    <sub-question-text *ngFor="let sub of subQuestionList" [data]="sub"> </sub-question-text>
+    </ion-scroll>
+</ion-content>

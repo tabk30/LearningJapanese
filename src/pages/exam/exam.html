@@ -8,14 +8,14 @@
 </ion-header>
 
 
-<ion-content>
+<ion-content scroll="false">
   <time-counter> </time-counter>
   <ion-slides>
     <ion-slide >
        <question-implement [component]="component1" [data]="component1Data"></question-implement> 
     </ion-slide>
     <ion-slide>
-      <question-implement [component]="component2" [data]="component2Data"></question-implement>
+      <question-implement [component]="questionBase" [data]="component2Data"></question-implement>
     </ion-slide>
     <ion-slide>
       <question-implement [component]="component1" [data]="component1Data"></question-implement>
